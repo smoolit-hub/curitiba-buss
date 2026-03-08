@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Curitiba Bus</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon.png">
+    <meta name="theme-color" content="#0b0b0b">
+
+    <style>
+        :root {
+            --bg: #0b0b0b;
+            --surface: #1c1c1c;
+            --primary: #f39c12; /* Amarelo/Laranja ônibus de Curitiba */
+            --text: #ffffff;
+            --text-muted: #aaaaaa;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        button {
+            background: var(--surface);
+            color: var(--text);
+            border: 2px solid #333;
+            padding: 16px;
+            font-size: 18px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: bold;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        button:active {
+            background: var(--primary);
+            color: #0b0b0b;
+            border-color: var(--primary);
+            transform: scale(0.97);
+        }
+
+        #resultado {
+            margin-top: 30px;
+            width: 100%;
+            max-width: 320px;
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: none; /* Escondido até ter resultado */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .destaque {
+            font-size: 42px;
+            color: var(--primary);
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .muted {
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Curitiba Bus</h1>
+
+    <div class="btn-group">
+        <button onclick="buscar('taruma')">Tarumã</button>
+        <button onclick="buscar('alto')">Alto Tarumã</button>
+        <button onclick="buscar('santa')">B. Alto / Sta Felicidade</button>
+    </div>
+
+    <div id="resultado"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
